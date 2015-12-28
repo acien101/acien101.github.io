@@ -1,0 +1,12 @@
+= Hola Mundo
+:hp-tags: Hola Mundo, Quien soy
+
+Que otra forma de empezar que dando una bienvenida a lo que vendrá siendo el rincón donde vaya subiendo mis proyectos y reflexiones.
+
+Este blog lo abro en 2015, casi ya en 2016. En este momento soy alumno de 2º de bachillerato y me considero un amante de la tecnología, por ese motivo veía la necesidad de mostrar mi trabajo y lograr que otras personas aprendan. Actualmente mis conocimientos en la tecnología se orientan sobretodo en php, java, arduino, raspberry pi, android. 
+
+En este espacio no tengo pensado tener una regularidad en cuanto articulos, lo que si quiero es aprender, aprender a mejorar mi código para que otras personas lo entiendan, el camino para ser un buen programador. Lo que me gustaría es aprender, conocer y compartir.
+
+Hasta el momento mis proyectos no los compartía mucho, por pura vageza y desconocimiento. Por otra parte, soy amplio defensor de las tecnologías libres, software libre y conocimiento libre. Por medio de la tecnología y el aprendizage podemos cambiar nuestra forma de acceder al conocimiento, como dijo Richard Stallman "Software libre para una sociedad libre". Hasta ahora sentía que era un mero dependiente del FOSS y es ahora cuando quiero, por medio de estas lineas, compartir mi conocimiento.
+
+acien101@debian:~$ EXIT
