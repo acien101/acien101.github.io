@@ -12,7 +12,7 @@ Ya con toda la documentación nos podemos poner a la obra. Recomiendo para la ge
 
 Para ir empezando a familiarizarme con OpenGL en android, he hecho un ejemplo con un SeekBar y un triangulo. Que con el SeekBar podamos girar el triagulo. El código se encuentra link:https://github.com/acien101/OpenGl-ES-android-examples/tree/master/MyFirstOpenGLApp[aqui]. Y dejo unos pantallazos del ejemplo:
 
-image::OpenGlExample0.png[Ejemplo 0, 200]
+image::OpenGlExample0.png[Ejemplo 0, 100]
 image::OpenGlExample1.png[Ejemplo 1, 200]
 image::OpenGlExample2.png[Ejemplo 2, 200]
 
