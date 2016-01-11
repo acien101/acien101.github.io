@@ -1,0 +1,20 @@
+= OpenGL ES android - La librería de la que me he enamorado
+
+:hp-tags: android, OpenGl, android studio, open source, ejemplos
+
+En mi cabeza rondaban ideas de hacer algo relacionado con el 3D para android, y encontré OpenGl ES en android. Se trata de una librería nativa de android que tiene soporte para 2D y 3D. A día de hoy se encuentra en la versión 3.1 y la link:http://developer.android.com/intl/es/reference/android/opengl/package-summary.html[API]
+está muy completa de funciones y cosas ricas :)
+
+Para alguien que no ha tenido ninguna toma de contacto con algo relacionado con el 3D, como yo, asusta un poco la dificultad, pero eso mismo hace que me guste más. En internet no hay mucha documentación de esta API para android, pero la más fácil y que recomiendo es la de link:http://developer.android.com/intl/es/guide/topics/graphics/opengl.html[android developers] y esta link:http://www.learnopengles.com/android-lesson-one-getting-started/[otra] más extensa. Además encontré esto ejemplo muy buenos de link:https://github.com/JimSeker/opengl[JimSeker].
+
+
+Ya con toda la documentación nos podemos poner a la obra. Recomiendo para la gente que no ha probado esta libería antes que le heche un vistazo, sobretodo los videos de youtube de la capacidad que puede llegar a tener esta librería.
+
+Para ir empezando a familiarizarme con OpenGL en android, he hecho un ejemplo con un SeekBar y un triangulo. Que con el SeekBar podamos girar el triagulo. El código se encuentra link:https://github.com/acien101/OpenGl-ES-android-examples/tree/master/MyFirstOpenGLApp[aqui]. Y dejo unos pantallazos del ejemplo:
+
+image::OpenGlExample0.png[Ejemplo 0, 200]
+image::OpenGlExample1.png[Ejemplo 1, 200]
+image::OpenGlExample2.png[Ejemplo 2, 200]
+
+
+Yo ya he hecho mi primer ejemplo con OpenGL ES, a que esperas tu!!
