@@ -1,0 +1,38 @@
+= ¿Cómo de fácil es suplantar una identidad? Hacking con PHP
+
+:hp-tags: PHP, ejemplo, Hacking, Phising, MITM
+
+PHP es un lenguaje muy críticado por mucha gente, pero se aprende mucho como funciona internet y las páginas web. PHP está orientado para la parte de servidor, por lo que programar con este lenguaje te obliga a tener cuidado con lo que haces por si es vulnerable. Se supone que es un leguaje "seguro" porque el usuario no llega a ver el código, pero sí te puedes imaginar como funciona cuando ves el tráfico de tu conexión (psicología inversa).
+
+Un resumen de como funcionan los servicios en internet es que tu envias una petición al servidor y este te contesta con una respuesta. Un ejemplo es un inicio de sesión, tu envias una contraseña y el servidor te responde si la contraseña es válida o no. En ese momento en el que se envian los datos es cuando eres vulnerable. Por este motivo no es muy recomendable utilizar internet público, porque alguien  puede estar espiando por la red.
+
+Este tráfico de internet se hace en PHP con las variables superglobales $_GET[""] y $_POST[""]. La primera la recibe el servidor cuando ingresas en una web como http://acien101.github.io?varible=asdf , y la segunda se hace por medio de un formulario con el protocolo HTTP, que se puede acceder por medio de un ataque MAN IN THE MIDDLE, que sería algo así: 
+
+	number=2&value=131HTTP/1.1 200 OK
+	Date: Sat, 22 Aug 2015 10:15:35 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.5.26
+	Content-Encoding: gzip
+	Vary: Accept-Encoding
+	Content-Length: 267
+	Keep-Alive: timeout=2, max=99
+	Connection: Keep-Alive
+	Content-Type: text/html
+    
+Dicho todo esto, PHP ofrece algunas funciones muy interesantes. Como la de 	
+
+	file_get_contents("http://www.elmundo.es/");
+    
+Con la que se puede conseguir el código de la página que queramos. Esto nos da la posibilidad de modificar el código y volverlo a lanzar con los parametros que nosotros queramos.
+
+Un ejemplo muy fácil y peligroso es conseguir el código de alguna página web habitual y modificar los parámetros para que los datos vayan dirigidos a nuestro servidor en vez de al que debería de ir. Eso se conseguiría modificando los métodos que antes hemos hablado, $_GET[] y $_POST[]. A que mola!!
+
+No solo se pueden hacer cosas malas, también se pueden hacer cosas graciosas. Yo he hecho un ejemplo en el que se modifican las imagenes de EL MUNDO, y se pueden poner la imagen que queramos añadiendo "?pic=paginadelafotografia" al final del link de la web (método $_GET). Yo he puesto para enseñar la página un gif del grupo Ratatat. No he podido subir la página porque github no soporta PHP (viendo las maldades que se pueden hacer, lo entiendo), pero he subido el código link:https://github.com/acien101/php-repostry/tree/master/phising%20en%20php[aqui] para que quien quiera pueda modificar mi código y hacer lo que quiera con el.
+
+Este es un ejemplo tonto, pero que deja ver las posibilidades que tiene. La solución a este tipo de suplantación es tener siempre a la vista a donde van dirigidos los datos, y estar pendientes de que nuestra conexión a internet es segura, no la de un sitio público.
+
+Dejo una imagen del ejemplo. Posiblemente lo más gracioso que haya hecho y que vaya a hacer en este blog en mucho tiempo.
+
+image::phising.gif[Ejemplo]
+
+acien101@debian:~$ EXIT
