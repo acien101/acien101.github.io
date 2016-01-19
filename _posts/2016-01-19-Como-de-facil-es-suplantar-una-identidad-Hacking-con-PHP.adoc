@@ -1,6 +1,6 @@
 = ¿Cómo de fácil es suplantar una identidad? Hacking con PHP
 
-:hp-tags: PHP, ejemplo, Hacking, Phising, MITM
+:hp-tags: PHP, ejemplo, Hacking, Phishing, MITM
 
 PHP es un lenguaje muy críticado por mucha gente, pero se aprende mucho como funciona internet y las páginas web. PHP está orientado para la parte de servidor, por lo que programar con este lenguaje te obliga a tener cuidado con lo que haces por si es vulnerable. Se supone que es un leguaje "seguro" porque el usuario no llega a ver el código, pero sí te puedes imaginar como funciona cuando ves el tráfico de tu conexión (psicología inversa).
 
