@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>¿Cómo de fácil es suplantar una identidad? Hacking con PHP</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//acien101.github.io/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//acien101.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html" />
+    
+    <meta property="og:site_name" content="Nombre completo para el usuario: Fran Acién" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="¿Cómo de fácil es suplantar una identidad? Hacking con PHP" />
+    <meta property="og:description" content="PHP es un lenguaje muy críticado por mucha gente, pero se aprende mucho como funciona internet y las páginas web. PHP está orientado para la parte de servidor, por lo que programar con este lenguaje te obliga a tener cuidado..." />
+    <meta property="og:url" content="https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html" />
+    <meta property="article:published_time" content="2016-01-18T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-01-19T20:31:40.874Z" />
+    <meta property="article:tag" content="PHP" />
+    <meta property="article:tag" content="ejemplo" />
+    <meta property="article:tag" content="Hacking" />
+    <meta property="article:tag" content="Phishing" />
+    <meta property="article:tag" content="MITM" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="¿Cómo de fácil es suplantar una identidad? Hacking con PHP" />
+    <meta name="twitter:description" content="PHP es un lenguaje muy críticado por mucha gente, pero se aprende mucho como funciona internet y las páginas web. PHP está orientado para la parte de servidor, por lo que programar con este lenguaje te obliga a tener cuidado..." />
+    <meta name="twitter:url" content="https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Nombre completo para el usuario: Fran Acién",
+    "author": {
+        "@type": "Person",
+        "name": "Fran Acién",
+        "image": "https://avatars.githubusercontent.com/u/12751538?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "https://twitter.com/amil101"
+    },
+    "headline": "¿Cómo de fácil es suplantar una identidad? Hacking con PHP",
+    "url": "https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html",
+    "datePublished": "2016-01-18T23:00:00.000Z",
+    "dateModified": "2016-01-19T20:31:40.874Z",
+    "keywords": "PHP,  ejemplo,  Hacking,  Phishing,  MITM",
+    "description": "PHP es un lenguaje muy críticado por mucha gente, pero se aprende mucho como funciona internet y las páginas web. PHP está orientado para la parte de servidor, por lo que programar con este lenguaje te obliga a tener cuidado..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Nombre completo para el usuario: Fran Acién" href="https://acien101.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-PHP tag-ejemplo tag-Hacking tag-Phishing tag-MITM">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="https://acien101.github.io">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="https://acien101.github.io/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-PHP tag-ejemplo tag-Hacking tag-Phishing tag-MITM">
+
+        <header class="post-header">
+            <h1 class="post-title">¿Cómo de fácil es suplantar una identidad? Hacking con PHP</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-01-19">19 January 2016</time>  on <a href="https://acien101.github.io/tag/PHP">PHP</a>, <a href="https://acien101.github.io/tag/ejemplo"> ejemplo</a>, <a href="https://acien101.github.io/tag/Hacking"> Hacking</a>, <a href="https://acien101.github.io/tag/Phishing"> Phishing</a>, <a href="https://acien101.github.io/tag/MITM"> MITM</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="paragraph">
+<p>PHP es un lenguaje muy críticado por mucha gente, pero se aprende mucho como funciona internet y las páginas web. PHP está orientado para la parte de servidor, por lo que programar con este lenguaje te obliga a tener cuidado con lo que haces por si es vulnerable. Se supone que es un leguaje "seguro" porque el usuario no llega a ver el código, pero sí te puedes imaginar como funciona cuando ves el tráfico de tu conexión (psicología inversa).</p>
+</div>
+<div class="paragraph">
+<p>Un resumen de como funcionan los servicios en internet es que tu envias una petición al servidor y este te contesta con una respuesta. Un ejemplo es un inicio de sesión, tu envias una contraseña y el servidor te responde si la contraseña es válida o no. En ese momento en el que se envian los datos es cuando eres vulnerable. Por este motivo no es muy recomendable utilizar internet público, porque alguien  puede estar espiando por la red.</p>
+</div>
+<div class="paragraph">
+<p>Este tráfico de internet se hace en PHP con las variables superglobales $_GET[""] y $_POST[""]. La primera la recibe el servidor cuando ingresas en una web como <a href="http://acien101.github.io?varible=asdf" class="bare">http://acien101.github.io?varible=asdf</a> , y la segunda se hace por medio de un formulario con el protocolo HTTP, que se puede acceder por medio de un ataque MAN IN THE MIDDLE, que sería algo así:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>number=2&amp;value=131HTTP/1.1 200 OK
+Date: Sat, 22 Aug 2015 10:15:35 GMT
+Server: Apache
+X-Powered-By: PHP/5.5.26
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Length: 267
+Keep-Alive: timeout=2, max=99
+Connection: Keep-Alive
+Content-Type: text/html</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dicho todo esto, PHP ofrece algunas funciones muy interesantes. Como la de</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>file_get_contents("http://www.elmundo.es/");</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Con la que se puede conseguir el código de la página que queramos. Esto nos da la posibilidad de modificar el código y volverlo a lanzar con los parametros que nosotros queramos.</p>
+</div>
+<div class="paragraph">
+<p>Un ejemplo muy fácil y peligroso es conseguir el código de alguna página web habitual y modificar los parámetros para que los datos vayan dirigidos a nuestro servidor en vez de al que debería de ir. Eso se conseguiría modificando los métodos que antes hemos hablado, $_GET[] y $_POST[]. A que mola!!</p>
+</div>
+<div class="paragraph">
+<p>No solo se pueden hacer cosas malas, también se pueden hacer cosas graciosas. Yo he hecho un ejemplo en el que se modifican las imagenes de EL MUNDO, y se pueden poner la imagen que queramos añadiendo "?pic=paginadelafotografia" al final del link de la web (método $_GET). Yo he puesto para enseñar la página un gif del grupo Ratatat. No he podido subir la página porque github no soporta PHP (viendo las maldades que se pueden hacer, lo entiendo), pero he subido el código <a href="https://github.com/acien101/php-repostry/tree/master/phising%20en%20php">aqui</a> para que quien quiera pueda modificar mi código y hacer lo que quiera con el.</p>
+</div>
+<div class="paragraph">
+<p>Este es un ejemplo tonto, pero que deja ver las posibilidades que tiene. La solución a este tipo de suplantación es tener siempre a la vista a donde van dirigidos los datos, y estar pendientes de que nuestra conexión a internet es segura, no la de un sitio público.</p>
+</div>
+<div class="paragraph">
+<p>Dejo una imagen del ejemplo. Posiblemente lo más gracioso que haya hecho y que vaya a hacer en este blog en mucho tiempo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/phising.gif" alt="Ejemplo">
+</div>
+</div>
+<div class="paragraph">
+<p>acien101@debian:~$ EXIT</p>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/12751538?v=3)"><span class="hidden">Fran Acién's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Fran Acién</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Almeria, Spain</span>
+                    <span class="author-link icon-link"><a href="https://twitter.com/amil101">https://twitter.com/amil101</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=%C2%BFC%C3%B3mo%20de%20f%C3%A1cil%20es%20suplantar%20una%20identidad%3F%20Hacking%20con%20PHP&amp;url=https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://acien101.github.io/2016/01/19/Como-de-facil-es-suplantar-una-identidad-Hacking-con-PHP.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'acien101'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://acien101.github.io">Nombre completo para el usuario: Fran Acién</a> &copy; 2016</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//acien101.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//acien101.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71801029-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
