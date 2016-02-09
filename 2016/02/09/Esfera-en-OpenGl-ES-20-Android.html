@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Esfera en OpenGl ES 2.0 Android</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//acien101.github.io/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//acien101.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html" />
+    
+    <meta property="og:site_name" content="Nombre completo para el usuario: Fran Acién" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Esfera en OpenGl ES 2.0 Android" />
+    <meta property="og:description" content="Hola! Estos días estoy trabajando en un proyectillo para pasar un ejercicio de dibujo técnico a 3D. Y para hacer los puntos necesitaba esferas. El problema es que en OpenGL hacemos las figuras por medio de triangulos. Sí, una esfera..." />
+    <meta property="og:url" content="https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html" />
+    <meta property="article:published_time" content="2016-02-08T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-02-09T22:10:09.987Z" />
+    <meta property="article:tag" content="Sphere on openGL es 2.0 android" />
+    <meta property="article:tag" content="android" />
+    <meta property="article:tag" content="opengl" />
+    <meta property="article:tag" content="opensource" />
+    <meta property="article:tag" content="ejemplos" />
+    <meta property="article:tag" content="github" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Esfera en OpenGl ES 2.0 Android" />
+    <meta name="twitter:description" content="Hola! Estos días estoy trabajando en un proyectillo para pasar un ejercicio de dibujo técnico a 3D. Y para hacer los puntos necesitaba esferas. El problema es que en OpenGL hacemos las figuras por medio de triangulos. Sí, una esfera..." />
+    <meta name="twitter:url" content="https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Nombre completo para el usuario: Fran Acién",
+    "author": {
+        "@type": "Person",
+        "name": "Fran Acién",
+        "image": "https://avatars.githubusercontent.com/u/12751538?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "https://twitter.com/amil101"
+    },
+    "headline": "Esfera en OpenGl ES 2.0 Android",
+    "url": "https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html",
+    "datePublished": "2016-02-08T23:00:00.000Z",
+    "dateModified": "2016-02-09T22:10:09.987Z",
+    "keywords": "Sphere on openGL es 2.0 android,  android,  opengl,  opensource,  ejemplos,  github",
+    "description": "Hola! Estos días estoy trabajando en un proyectillo para pasar un ejercicio de dibujo técnico a 3D. Y para hacer los puntos necesitaba esferas. El problema es que en OpenGL hacemos las figuras por medio de triangulos. Sí, una esfera..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Nombre completo para el usuario: Fran Acién" href="https://acien101.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-Sphere-on-openGL-es-20-android tag-android tag-opengl tag-opensource tag-ejemplos tag-github">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="https://acien101.github.io">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="https://acien101.github.io/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-Sphere-on-openGL-es-20-android tag-android tag-opengl tag-opensource tag-ejemplos tag-github">
+
+        <header class="post-header">
+            <h1 class="post-title">Esfera en OpenGl ES 2.0 Android</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-02-09">09 February 2016</time>  on <a href="https://acien101.github.io/tag/Sphere-on-openGL-es-20-android">Sphere on openGL es 2.0 android</a>, <a href="https://acien101.github.io/tag/android"> android</a>, <a href="https://acien101.github.io/tag/opengl"> opengl</a>, <a href="https://acien101.github.io/tag/opensource"> opensource</a>, <a href="https://acien101.github.io/tag/ejemplos"> ejemplos</a>, <a href="https://acien101.github.io/tag/github"> github</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="paragraph">
+<p>Hola!</p>
+</div>
+<div class="paragraph">
+<p>Estos días estoy trabajando en un proyectillo para pasar un ejercicio de dibujo técnico a 3D. Y para hacer los puntos necesitaba esferas. El problema es que en OpenGL hacemos las figuras por medio de triangulos. Sí, una esfera por medio de triangulos. ¿Cómo?</p>
+</div>
+<div class="paragraph">
+<p>Viendo lo que se me iba a costar pensé en más de una vez en hacer un cubo para salir del paso. Busqué si alguien lo había hecho y no encontraba ninguna información decente, solo encontraba de otros lenguajes. Hasta que me encontré con el repositorio de <a href="https://github.com/JimSeker/opengl">JimSeker</a> que tenía hecha una esfera pero para otra versión. Por lo que tenía que actualizar a como se hace ahora.</p>
+</div>
+<div class="paragraph">
+<p>Visto que la documentación de como hacer esferas en OpenGl Es 2.0 es nula, me veo obligado a compartir el código, el código completo de la aplicación <a href="https://github.com/acien101/OpenGl-ES-android-examples/tree/master/SphereOpenGlES2.0">en mi github</a>. Espero que sea de ayuda :)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public class Sphere {
+
+    private final String vertexShaderCode =
+            "uniform mat4 uMVPMatrix;" +
+                    "attribute vec4 vPosition;" +
+                    "void main() {" +
+                    // The matrix must be included as a modifier of gl_Position.
+                    // Note that the uMVPMatrix factor *must be first* in order
+                    // for the matrix multiplication product to be correct.
+                    "  gl_Position = uMVPMatrix * vPosition;" +
+                    "}";
+
+    private final String fragmentShaderCode =
+            "precision mediump float;" +
+                    "uniform vec4 vColor;" +
+                    "void main() {" +
+                    "  gl_FragColor = vColor;" +
+                    "}";
+
+    private FloatBuffer vertexBuffer;
+
+    // number of coordinates per vertex in this array
+    static final int COORDS_PER_VERTEX = 3;
+
+    // Set color with red, green, blue and alpha (opacity) values
+    float color[] = { 0.63671875f, 0.76953125f, 0.22265625f, 1.0f };
+
+    private final int mProgram;
+
+    public Sphere(int stacks, int slices, float radius, float squash) {
+
+        this.m_Stacks = stacks;
+        this.m_Slices = slices;
+        this.m_Radius = radius;
+        this.m_Squash = squash;
+
+        init(m_Stacks, m_Slices, radius, squash, "dummy");
+
+        int vertexShader = MyGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER,
+                vertexShaderCode);
+        int fragmentShader = MyGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,
+                fragmentShaderCode);
+
+        // create empty OpenGL ES Program
+        mProgram = GLES20.glCreateProgram();
+
+        // add the vertex shader to program
+        GLES20.glAttachShader(mProgram, vertexShader);
+
+        // add the fragment shader to program
+        GLES20.glAttachShader(mProgram, fragmentShader);
+
+        // creates OpenGL ES program executables
+        GLES20.glLinkProgram(mProgram);
+    }
+
+    public static int loadShader(int type, String shaderCode){
+
+        // create a vertex shader type (GLES20.GL_VERTEX_SHADER)
+        // or a fragment shader type (GLES20.GL_FRAGMENT_SHADER)
+        int shader = GLES20.glCreateShader(type);
+
+        // add the source code to the shader and compile it
+        GLES20.glShaderSource(shader, shaderCode);
+        GLES20.glCompileShader(shader);
+
+        return shader;
+    }
+
+    private int mPositionHandle;
+    private int mColorHandle;
+    private int mMVPMatrixHandle;
+
+    private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
+
+    public void draw(float[] mvpMatrix) {
+
+        // Add program to OpenGL ES environment
+        GLES20.glUseProgram(mProgram);
+
+        // get handle to vertex shader's vPosition member
+        mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition");
+
+        // Enable a handle to the triangle vertices
+        GLES20.glEnableVertexAttribArray(mPositionHandle);
+
+        // Prepare the triangle coordinate data
+        GLES20.glVertexAttribPointer(mPositionHandle, COORDS_PER_VERTEX,
+                GLES20.GL_FLOAT, false,
+                vertexStride, vertexBuffer);
+
+        // get handle to fragment shader's vColor member
+        mColorHandle = GLES20.glGetUniformLocation(mProgram, "vColor");
+
+        // Set color for drawing the triangle
+        GLES20.glUniform4fv(mColorHandle, 1, color, 0);
+
+        // get handle to shape's transformation matrix
+        mMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
+
+        // Apply the projection and view transformation
+        GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
+
+        // Draw the triangle
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, (m_Slices+1)*2*(m_Stacks-1)+2);
+
+        // Disable vertex array
+        GLES20.glDisableVertexAttribArray(mPositionHandle);
+    }
+
+
+    float m_Scale;
+    float m_Squash;
+    float m_Radius;
+    int m_Stacks, m_Slices;
+
+    private void init(int stacks,int slices, float radius, float squash, String textureFile) {
+        float[] vertexData;
+        float[] colorData;
+        float colorIncrement=0f;
+
+        float blue=0f;
+        float red=1.0f;
+        int vIndex=0;				//vertex index
+        int cIndex=0;				//color index
+
+        m_Scale=radius;
+        m_Squash=squash;
+
+        colorIncrement=1.0f/(float)stacks;
+
+        {
+            m_Stacks = stacks;
+            m_Slices = slices;
+
+            //vertices
+
+            vertexData = new float[ 3*((m_Slices*2+2) * m_Stacks)];
+
+            //color data
+
+            colorData = new float[ (4*(m_Slices*2+2) * m_Stacks)];
+
+            int phiIdx, thetaIdx;
+
+            //latitude
+
+            for(phiIdx=0; phiIdx &lt; m_Stacks; phiIdx++)
+            {
+                //starts at -90 degrees (-1.57 radians) goes up to +90 degrees (or +1.57 radians)
+
+                //the first circle
+
+                float phi0 = (float) Math.PI * ((float)(phiIdx+0) * (1.0f/(float)(m_Stacks)) - 0.5f);
+
+                //the next, or second one.
+
+                float phi1 = (float) Math.PI * ((float)(phiIdx+1) * (1.0f/(float)(m_Stacks)) - 0.5f);
+
+                float cosPhi0 = (float) Math.cos(phi0);
+                float sinPhi0 = (float) Math.sin(phi0);
+                float cosPhi1 = (float) Math.cos(phi1);
+                float sinPhi1 = (float) Math.sin(phi1);
+
+                float cosTheta, sinTheta;
+
+                //longitude
+
+                for(thetaIdx=0; thetaIdx &lt; m_Slices; thetaIdx++)
+                {
+                    //increment along the longitude circle each "slice"
+
+                    float theta = (float) (-2.0f*(float) Math.PI * ((float)thetaIdx) * (1.0/(float)(m_Slices-1)));
+                    cosTheta = (float) Math.cos(theta);
+                    sinTheta = (float) Math.sin(theta);
+
+                    //we're generating a vertical pair of points, such
+                    //as the first point of stack 0 and the first point of stack 1
+                    //above it. This is how TRIANGLE_STRIPS work,
+                    //taking a set of 4 vertices and essentially drawing two triangles
+                    //at a time. The first is v0-v1-v2 and the next is v2-v1-v3. Etc.
+
+                    //get x-y-z for the first vertex of stack
+
+                    vertexData[vIndex+0] = m_Scale*cosPhi0*cosTheta;
+                    vertexData[vIndex+1] = m_Scale*(sinPhi0*m_Squash);
+                    vertexData[vIndex+2] = m_Scale*(cosPhi0*sinTheta);
+
+                    vertexData[vIndex+3] = m_Scale*cosPhi1*cosTheta;
+                    vertexData[vIndex+4] = m_Scale*(sinPhi1*m_Squash);
+                    vertexData[vIndex+5] = m_Scale*(cosPhi1*sinTheta);
+
+                    colorData[cIndex+0] = (float)red;
+                    colorData[cIndex+1] = (float)0f;
+                    colorData[cIndex+2] = (float)blue;
+                    colorData[cIndex+4] = (float)red;
+                    colorData[cIndex+5] = (float)0f;
+                    colorData[cIndex+6] = (float)blue;
+                    colorData[cIndex+3] = (float)1.0;
+                    colorData[cIndex+7] = (float)1.0;
+
+                    cIndex+=2*4;
+                    vIndex+=2*3;
+                }
+
+                blue+=colorIncrement;
+                red-=colorIncrement;
+
+                // create a degenerate triangle to connect stacks and maintain winding order
+
+                vertexData[vIndex+0] = vertexData[vIndex+3] = vertexData[vIndex-3];
+                vertexData[vIndex+1] = vertexData[vIndex+4] = vertexData[vIndex-2];
+                vertexData[vIndex+2] = vertexData[vIndex+5] = vertexData[vIndex-1];
+            }
+
+        }
+
+        makeFloatBuffer(vertexData);
+    }
+
+    public void  makeFloatBuffer(float[] arr)
+    {
+        ByteBuffer bb = ByteBuffer.allocateDirect(arr.length * 4);
+        bb.order(ByteOrder.nativeOrder());
+        vertexBuffer = bb.asFloatBuffer();
+        vertexBuffer.put(arr);
+        vertexBuffer.position(0);
+
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>El resultado final es:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/OpenGLShpereExample.png" alt="Ejemplo sphera" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>acien101@debian:~$ EXIT</p>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/12751538?v=3)"><span class="hidden">Fran Acién's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Fran Acién</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Almeria, Spain</span>
+                    <span class="author-link icon-link"><a href="https://twitter.com/amil101">https://twitter.com/amil101</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Esfera%20en%20OpenGl%20ES%202.0%20Android&amp;url=https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://acien101.github.io/2016/02/09/Esfera-en-OpenGl-ES-20-Android.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'acien101'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://acien101.github.io">Nombre completo para el usuario: Fran Acién</a> &copy; 2016</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//acien101.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//acien101.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71801029-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
