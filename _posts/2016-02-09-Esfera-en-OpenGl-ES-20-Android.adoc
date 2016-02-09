@@ -1,0 +1,9 @@
+= Esfera en OpenGl ES 2.0 Android
+
+:hp-tags: Sphere on openGL es 2.0 android, android, opengl, opensource, ejemplos, github
+
+Hola!
+
+Estos días estoy trabajando en un proyectillo para pasar un ejercicio de dibujo técnico a 3D. Y para hacer los puntos necesitaba esferas. El problema es que en OpenGL hacemos las figuras por medio de triangulos. Sí, una esfera por medio de triangulos. ¿Cómo?
+
+Viendo lo que se me iba a costar pensé en más de una vez en hacer un cubo para salir del paso. Busqué si alguien lo había hecho y no encontraba ninguna información decente, solo encontraba de otros lenguajes. Hasta que me encontré con el repositorio de :link[asdf] https://github.com/JimSeker/opengl
