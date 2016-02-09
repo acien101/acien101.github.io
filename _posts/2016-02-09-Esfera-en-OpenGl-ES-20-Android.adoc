@@ -8,7 +8,7 @@ Estos días estoy trabajando en un proyectillo para pasar un ejercicio de dibujo
 
 Viendo lo que se me iba a costar pensé en más de una vez en hacer un cubo para salir del paso. Busqué si alguien lo había hecho y no encontraba ninguna información decente, solo encontraba de otros lenguajes. Hasta que me encontré con el repositorio de link:https://github.com/JimSeker/opengl[JimSeker] que tenía hecha una esfera pero para otra versión. Por lo que tenía que actualizar a como se hace ahora.
 
-Visto que la documentación de como hacer esferas en OpenGl Es 2.0 es nula, me veo obligado a compartir el código, link:https://github.com/acien101/OpenGl-ES-android-examples/tree/master/SphereOpenGlES2.0[en mi github]. Espero que sea de ayuda :)
+Visto que la documentación de como hacer esferas en OpenGl Es 2.0 es nula, me veo obligado a compartir el código, el código completo de la aplicación link:https://github.com/acien101/OpenGl-ES-android-examples/tree/master/SphereOpenGlES2.0[en mi github]. Espero que sea de ayuda :)
 
 ....
 public class Sphere {
@@ -246,3 +246,6 @@ public class Sphere {
 El resultado final es:
 
 image::OpenGLShpereExample.png[Ejemplo sphera, 200]
+
+
+acien101@debian:~$ EXIT
