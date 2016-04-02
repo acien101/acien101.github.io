@@ -1,0 +1,43 @@
+= Arduino/Genuino Day 2016
+
+:hp-tags: arduino, genuino, ArduinoDay16, GenuinoDay15, IOT, Curriculum, FOSS, Open Source, HackLab Almería, Hacklab
+
+Hoy 2 de abril de 2016 se celebra en todo el mundo el Arduino/Genuino Day, para conmemorar y aprovechar para jugar y disfrutar con esta placa. Se celebran en todo el mundo actividades para darla a conocer y para pasar un buen rato. En el mapa podemos ver que solo en España se celebran 29 actividades repartidas por todo el país.
+
+Nosotros, desde HackLab Almería, nos hemos querido reunir, tras 3 años sucesivos, para hacer una serie de charlas y talleres para fomentar el uso de arduino y el espiritu hacker. Durante todo el día se han llevado a cabo charlas como, "¿poqué arduino mola tanto?", "gente que hace cosas con cacharros", "arduino en el aula", "los saraos de Brico_Dani", y diversos talleres como los típicos Blink, leer sensores digitales, leer sensores analógicos, etc.
+
+image::actividades.png[actividades, 400]
+
+A la hora en la que estoy escribiendo esto "22:47", ya hemos terminado nuestras charlas y desde aqui quiero dar mi punto de vista y hacer un resumen de porqué son importantes este tipo de eventos.
+
+Por la mañana la sala de la escuela de arte(donde hemos realizado la actividad) estaba llena. La gente que vino no sabía mucho o nada de arduino, pero venían con muchas ganas de aprender, algo que nos hace muy contentos. Las primeras charlas estaban orientadas a que es arduino y diferentes aplicaciones.
+
+image::llena.jpg-large[Sala de la escuela de arte, 400]
+
+Mi charla consistía en explicar porque mola tanto esta placa. Por lo que me han comentado, a la gente le ha gustado mucho, y espero haber podido transmitir ese sentimiento y haber despertado interés en los asistentes. Dejo la link:[] por si alguien le interesa o si quiere reciclarmela xD.
+
+image::charleta.jpg[Porqué mola tanto arduino, 400]
+
+También pudimos ver la charla de Miguel Ángel y Jose Juan que hicieron en la CodeMotion de "gente que hace cosas con cacharros" donde explicaron ejemplos sencillos y bastante interesantes, como hacer un piano con patatas. 
+
+image::comienza.jpg-large[gente que hace cosas con cacharros, 400]
+
+También EduBásica ha realizado una charla explicando el proyecto para llevar arduino y la electrónica a las escuelas por medio de shield que viene con todo incorporado, botones, sensores, luces, transistores, potenciometros, etc.
+
+image::ardubasica.jpg[EduBasica, 400]
+
+Y la última y no menos importante, la que ha realizado Brico_Dani explicando los saraos y los proyectos en los que está metido.
+
+Luego ha habido una tarde entera de cacharreo donde la gente ha podido jugar y experimentar.
+
+La importancia de este tipo de eventos reside en que la gente ve una nueva forma de ver la tecnología e incentivan ese afán de aprender. No es solo hacer charlas, sino poner en contacto gente con mucho talento y conocimiento a disposición de gente con ganas de aprender (como yo). 
+
+Además este día es importante o lo fue para mi, porque hace un año yo conocí HackLab. Desde ese tiempo han surgido muchas actividades y he conocido mucha gente, y lo mejor es que me he inchado a aprender. Me acuerdo que hace un año conocí a los que hoy son buenos compañeros y para mi gente grande. Y al igual que yo hace un año conocí HackLab y desde ese momento amo que hacemos, me gustaría que hoy hayamos podido enviar ese mensaje al público de la importacia del Open Source, la tecnología, la ética hacker o el trabajo en equipo.
+
+Lo que he visto es mucha gente con ganas de aprender, algo que me recuerda a como era, y soy, hace un año. Y eso es lo que me motiva, haber podido transmitir ese sentimiento de afán. Y por eso sentía la necesidad de transmitirlo aqui.
+
+Hoy ha sido sin duda un día muy divertido, me lo he pasado muy bien. El año que viene más :) 
+
+Dejo imagen con Olea luciendo camisetas Hacker:
+
+image::wereables%20con%20Olea.jpg[posando con Olea, 400]
