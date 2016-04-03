@@ -14,7 +14,7 @@ Por la mañana la sala de la escuela de arte(donde hemos realizado la actividad)
 
 image::llena.jpg-large[Sala de la escuela de arte, 400]
 
-Mi charla consistía en explicar porque mola tanto esta placa. Por lo que me han comentado, a la gente le ha gustado mucho, y espero haber podido transmitir ese sentimiento y haber despertado interés en los asistentes. Dejo la link:[] por si alguien le interesa o si quiere reciclarmela xD.
+Mi charla consistía en explicar porque mola tanto esta placa. Por lo que me han comentado, a la gente le ha gustado mucho, y espero haber podido transmitir ese sentimiento y haber despertado interés en los asistentes. Dejo la link:https://github.com/acien101/acien101.github.io/blob/master/presentacion.odp?raw=true[presentación] por si alguien le interesa o si quiere reciclarmela xD.
 
 image::charleta.jpg[Porqué mola tanto arduino, 400]
 
@@ -25,6 +25,10 @@ image::comienza.jpg-large[gente que hace cosas con cacharros, 400]
 También EduBásica ha realizado una charla explicando el proyecto para llevar arduino y la electrónica a las escuelas por medio de shield que viene con todo incorporado, botones, sensores, luces, transistores, potenciometros, etc.
 
 image::ardubasica.jpg[EduBasica, 400]
+
+Después de la pausa para comer pudimos tener la oportunidad de escuchar a Paco, un apasionado de la tecnología y de arduino que nos contó sus experiencias pese a ser invidente, todo un ejemplo de superación. Esperemos que los problemas que tenía para utilizar el IDE de arduino se solucionen en las próximas actualizaciones. ÁNIMO Y SIGUE ASÍ!
+
+image::accesibilidad.jpg-large[Accesibilidad con arduino, 400]
 
 Y la última y no menos importante, la que ha realizado Brico_Dani explicando los saraos y los proyectos en los que está metido.
 
