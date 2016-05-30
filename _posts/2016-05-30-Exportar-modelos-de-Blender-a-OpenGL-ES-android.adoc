@@ -1,0 +1,112 @@
+= Exportar modelos de Blender a OpenGL ES android 
+:hp-tags: OpenGL ES, android, .obj, blender, Open Source, github, Perl, Java, FOSS
+
+La librería OpenGL ES para android nos ofrece muchas posibilidades, una de ellas es la funcion GLES20.glDrawArrays que nos ofrece la opción de reprensetar un objeto por medio de un array de floats (un conjunto de coordenadas). Por medio de esta función vamos a crear un modelo sacado de blender (un programa libre para el modelado en 3D).
+
+image::modeloOpenGL.jpg[Modelo 3d]
+
+El modelo que vamos a exportar va a ser una persona, y el link del modelo es link:http://www.blendswap.com/blends/view/2664[este]. Lo que vamos a hacer va a ser abrirlo con link:https://www.blender.org/[Blender] y exportarlo con el formato .obj Para ello tenemos que darle File->Export->.obj con solo "Write normals", "Write materials" y "Triangulate faces".
+
+*Cuidado con exportar modelos demasiado realistas*, no nos podemos olvidar que estamos con un móvil android y que las limitaciones son muchas. Mi consejo es cojer modelos bastante sencillos (como mucho 1000 vertices que son 3000 valores en punto flotante).
+
+El archivo .obj es una extension abierta en la que nos especifica todos los vértices del modelo 3D. Lo que necesitamos hacer es coger todos esto vertices en .obj para pasarlos a una clase java para que lo pueda leer el OpenGL ES. Hay dos formas de hacer, la primera hacer vosotros mismo un script 😉, o utilizar un script ya hecho.
+
+Yo he utilizado un script que había para OpenGl Es en iphone, y lo he adaptado para android (para que lo de como una clase java). El script original estaba escrito por link:https://github.com/HBehrens/obj2opengl[HBehrens] en Perl.
+
+El script para android es link:https://github.com/acien101/obj2opengl[obj2opengl], y para utilizarlo (yo lo utilizo en Linux) se pone en el terminal el archivo obj2opengl.pl y luego el modelo .obj que queremos pasar a java.
+
+	amil101@debian:~$ '/home/amil101/obj2opengl/obj2opengl.pl' '/home/amil101/Descargas/2664_Generic_Character/Character.obj' 
+
+El archivo final será una clase con los vertices. Lo que necesitamos es pasarlo a android y crear una clase para leer el modelo. 
+
+Yo he creado una clase para ver un modelo desde los vértices:
+
+	public class ModelTest {
+    	private final String vertexShaderCode =
+            // This matrix member variable provides a hook to manipulate
+            // the coordinates of the objects that use this vertex shader
+            "uniform mat4 uMVPMatrix;" +
+                    "attribute vec4 vPosition;" +
+                    "void main() {" +
+                    // the matrix must be included as a modifier of gl_Position
+                    // Note that the uMVPMatrix factor *must be first* in order
+                    // for the matrix multiplication product to be correct.
+                    "  gl_Position = uMVPMatrix * vPosition;" +
+                    "}";
+    	// Use to access and set the view transformation
+    	private int mMVPMatrixHandle;
+    	private final String fragmentShaderCode =
+            "precision mediump float;" +
+                    "uniform vec4 vColor;" +
+                    "void main() {" +
+                    "  gl_FragColor = vColor;" +
+                    "}";
+    	private final int mProgram;
+    	private int mPositionHandle;
+    	private int mColorHandle;
+    	private final int vertexCount = Character.CharacterVerts.length / COORDS_PER_VERTEX;
+    	private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
+    	private FloatBuffer vertexBuffer;
+    	// number of coordinates per vertex in this array
+    	static final int COORDS_PER_VERTEX = 3;
+    	// Set color with red, green, blue and alpha (opacity) values
+    	float color[] = { 0.63671875f, 0.76953125f, 0.22265625f, 1.0f };
+    	public ModelTest() {
+        	// initialize vertex byte buffer for shape coordinates
+        	ByteBuffer bb = ByteBuffer.allocateDirect(
+                // (number of coordinate values * 4 bytes per float)
+                Character.CharacterVerts.length * 4);
+        	// use the device hardware's native byte order
+        	bb.order(ByteOrder.nativeOrder());
+        	// create a floating point buffer from the ByteBuffer
+        	vertexBuffer = bb.asFloatBuffer();
+        	// add the coordinates to the FloatBuffer
+        	vertexBuffer.put(Character.CharacterVerts);
+        	// set the buffer to read the first coordinate
+        	vertexBuffer.position(0);
+        	int vertexShader = MyGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER,
+                vertexShaderCode);
+        	int fragmentShader = MyGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,
+                fragmentShaderCode);
+        	// create empty OpenGL ES Program
+        	mProgram = GLES20.glCreateProgram();
+        	// add the vertex shader to program
+        	GLES20.glAttachShader(mProgram, vertexShader);
+        	// add the fragment shader to program
+        	GLES20.glAttachShader(mProgram, fragmentShader);
+        	// creates OpenGL ES program executables
+        	GLES20.glLinkProgram(mProgram);
+    	}
+    	public void draw(float[] mvpMatrix) {
+        	// Add program to OpenGL ES environment
+        	GLES20.glUseProgram(mProgram);
+        	// get handle to vertex shader's vPosition member
+        	mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition");
+        	// Enable a handle to the triangle vertices
+        	GLES20.glEnableVertexAttribArray(mPositionHandle);
+        	// Prepare the triangle coordinate data
+        	GLES20.glVertexAttribPointer(mPositionHandle, COORDS_PER_VERTEX,
+                GLES20.GL_FLOAT, false,
+                vertexStride, vertexBuffer);
+        	// get handle to fragment shader's vColor member
+        	mColorHandle = GLES20.glGetUniformLocation(mProgram, "vColor");
+        	// Set color for drawing the triangle
+        	GLES20.glUniform4fv(mColorHandle, 1, color, 0);
+        	// get handle to shape's transformation matrix
+        	mMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
+        	// Pass the projection and view transformation to the shader
+        	GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
+        	// Draw the triangle
+        	GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
+        	// Disable vertex array
+        	GLES20.glDisableVertexAttribArray(mPositionHandle);
+    	}
+ }
+ 
+
+Y luego por ultimo hay que añadirlo al Renderer, no lo pongo porque sino va a ser demasiado código. Se puede descargar el ejemplo entero en mi link:https://github.com/acien101/obj2opengl/tree/master/HelloOpenGLES20[github].
+
+Y el resultado final es:
+
+image::resultadoOpenGL.gif[resultado final]
+
