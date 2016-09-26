@@ -1,0 +1,25 @@
+= GDG Summit ES 2016 
+:hp-tags: GDG, Google developers groups, Malaga, HackLab Almeria, Redes neuronales, Android, Cloud Computing
+
+Este finde tuvo lugar en Málaga el GDG Summit ES 2016, un evento para juntar a todos los GDG's orientado a compartir las experincias de estas comunidades locales y pasar un buen rato haciendo "piña". Los GDG's, grupos de desarrollo de google, son comunidades locales entusiasmadas con las tecnologías de google que solo buscan compartir conocimiento.
+
+
+Este año, el GDG Summit ES estuvo organizado por el link:https://twitter.com/GDGMalaga[GDG de Málaga] y tuvo lugar en la Universidad de Málaga. El primer día tuvimos la Open Conference, que consistian en charlas abiertas a todo el público, donde gran parte fueron estudiantes, y pudimos ver conferencias muy interesantes de Android Testing de la mano de link:https://twitter.com/flipper83[Jorge Barroso], Cloud Computing de  link:https://twitter.com/nachocoloma[Nacho Coloma], Kubernes de link:https://twitter.com/Laura_Morillo[Laura Morillo], Polymer por link:https://twitter.com/abdonrd[Abdon Rodríguez], Google Data Processing link:https://twitter.com/supercoco9[Javier Ramirez], en mi opinión y la de muchos, la mejor charla fue la que hablaba de redes neuronales con TensorFlow de la mano de link:https://twitter.com/SoyGema[Gema Parreño]. Sin duda fue un cartelazo para pasar una tarde aprendiendo, y ver cosas tan divertidas como ingeniería social para tratar con un troll por medio de 
+las tecnologías de machine learning. Se podía percibir que los estudiantes malagueños estaban bastante interesados por estos temas. Acá fotico de Gema:
+
+image::Charla_Gema_Parreño.jpg[Gema]
+
+
+Al día siguiente ya fue un evento más íntimo donde muchos de los GDG's explicaban como fue este último año. Aunque, también hubo algunas regañetas para seguir mejorando y casi no hubo desayuno. A mi me gustó mucho algunas actividades que organizan el link:https://twitter.com/GDGBurgos[GDG de Burgos] como la tapa tecnológica que consiste en reunirse para hablar de un tema tecnológico con una tapa, vamos, un BetaBeers pero más tranki. Fue una jornada repleta de charlas, donde entre chapa y chapa pudimos conocer a muchas personas de otras comunidades repartidas por toda España, y bueno, fue curioso como desde Málaga pude conocer gente de Madrid ^^ (donde estoy estudiando). Me gustó mucho conocer a la gente de Tenerife, y descubrir que desde la isla se genera mucho contenido con los GDG's y demás comunidades, en concreto hablo del grande de link:https://twitter.com/zalete[Gonzalo]. Acá foto de Olea (Hacklab Almería), Victor Suarez (Hacklab Almería, GDG Tenerife), Gonzalo Aller (GDG Tenerife) y yo, Fran Acién (La republica independiente de mi casa). Acá foto de la cúpula:
+
+image::OleaVictorYoGonzalo.jpg[Foto grupo]
+
+
+Eso sí, no pudo faltar la charla de Olea sobre HackLab Almería, que es un buen ejemplo de como con una organización un poco anarquista (sin valoracion política), puede llegar a montar eventos muy grandes con bastante espectación en una ciudad pequeña. Al fin de al cabo, HackLab Almería y GDG son comunidades y hay que compartir las experiencias para aprender unos de otros y hacer nuestro objetivo juntos, difundir la tecnología. Intentar unirnos y no separanos.
+
+
+image::la_trupe.jpg[Todos los GDG's]
+
+En conclusión, fue un fin de semana muy especial donde conocí a gente muy interesante y aprendí un montón. Ahora ya de vuelta a casita tengo muchas ganas de organizar saraos con el GDG de Madrid y llevar todo este buen rollo a mi escuela de sistemas informáticos de la Politécnica de Madrid. También destacar la suerte que tuve en ir con Jorge y Gema en el coche de ida y vuelta, donde hablamos de muuuchaaas cosas interantes. Y sobretodo, dar las gracias a link:https://twitter.com/davilagrau[Almo] que gracias a él toda esta experiencia fue posible.
+
+acien101@debian:~$ EXIT
